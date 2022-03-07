@@ -25,6 +25,7 @@ PDIR=$(dirname "${SDIR}")
 
 # TDIR stores all target dirs for clang-format
 TDIR=(
+    "${PDIR}/volume001"
     "${PDIR}/volume002"
 )
 
