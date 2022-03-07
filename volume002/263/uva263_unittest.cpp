@@ -37,7 +37,7 @@ TEST(UVa263Test, Solver) {
                "Original number was 123456789\n"
                "987654321 - 123456789 = 864197532\n"
                "987654321 - 123456789 = 864197532\n"
-               "Chain length 2\n");
+               "Chain length 2\n\n");
 
   EXPECT_STREQ(SolveByCaptureStdout(1234).c_str(),
                "Original number was 1234\n"
@@ -45,13 +45,13 @@ TEST(UVa263Test, Solver) {
                "8730 - 378 = 8352\n"
                "8532 - 2358 = 6174\n"
                "7641 - 1467 = 6174\n"
-               "Chain length 4\n");
+               "Chain length 4\n\n");
 
   EXPECT_STREQ(SolveByCaptureStdout(444).c_str(),
                "Original number was 444\n"
                "444 - 444 = 0\n"
                "0 - 0 = 0\n"
-               "Chain length 2\n");
+               "Chain length 2\n\n");
 
   EXPECT_STREQ(SolveByCaptureStdout(87543).c_str(),
                "Original number was 87543\n"
@@ -65,7 +65,7 @@ TEST(UVa263Test, Solver) {
                "97641 - 14679 = 82962\n"
                "98622 - 22689 = 75933\n"
                "97533 - 33579 = 63954\n"
-               "Chain length 10\n");
+               "Chain length 10\n\n");
 
   EXPECT_STREQ(SolveByCaptureStdout(1762893).c_str(),
                "Original number was 1762893\n"
@@ -81,5 +81,5 @@ TEST(UVa263Test, Solver) {
                "9877221 - 1227789 = 8649432\n"
                "9864432 - 2344689 = 7519743\n"
                "9775431 - 1345779 = 8429652\n"
-               "Chain length 12\n");
+               "Chain length 12\n\n");
 }

@@ -60,7 +60,7 @@ void Solve(const uint32_t n) {
     // make sure the result didn't in our visited set.
     auto search = visited.find(result);
     if (search != visited.end()) {
-      std::cout << "Chain length " << chain << std::endl;
+      std::cout << "Chain length " << chain << std::endl << std::endl;
       break;
     }
 
