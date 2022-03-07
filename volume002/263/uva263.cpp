@@ -41,11 +41,10 @@ std::vector<int> NumberToIntVector(uint32_t n) {
   return numbers;
 }
 
-void Solve(const uint32_t n) {
-  std::cout << "Original number was " << n << std::endl;
+void Solve(uint32_t number) {
+  std::cout << "Original number was " << number << std::endl;
 
   std::set<uint32_t> visited;
-  uint32_t number = n;
   for (int chain = 1;; ++chain) {
     // convert number to vector
     std::vector<int> numbers = NumberToIntVector(number);
