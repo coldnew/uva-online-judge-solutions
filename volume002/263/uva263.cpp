@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include <iostream>
+#include <set>
 #include <vector>
 
 namespace {
@@ -40,27 +41,32 @@ std::vector<int> NumberToIntVector(uint32_t n) {
   return numbers;
 }
 
-void Solve(const uint32_t n, int chain = 1) {
-  if (chain == 1)
-    std::cout << "Original number was " << n << std::endl;
+void Solve(const uint32_t n) {
+  std::cout << "Original number was " << n << std::endl;
 
-  // convert number n to vector
-  std::vector<int> numbers = NumberToIntVector(n);
+  std::set<uint32_t> visited;
+  uint32_t number = n;
+  for (int chain = 1;; ++chain) {
+    // convert number to vector
+    std::vector<int> numbers = NumberToIntVector(number);
 
-  // calculate ascending/descending number
-  auto dsc = Descending(numbers);
-  auto asc = Ascending(numbers);
+    // calculate ascending/descending number
+    auto dsc = Descending(numbers);
+    auto asc = Ascending(numbers);
 
-  auto result = dsc - asc;
-  std::cout << dsc << " - " << asc << " = " << result << std::endl;
+    auto result = dsc - asc;
+    std::cout << dsc << " - " << asc << " = " << result << std::endl;
 
-  // when current result the same as input n, stop the chain
-  if (result == n) {
-    std::cout << "Chain length " << chain << std::endl;
-    return;
+    // make sure the result didn't in our visited set.
+    auto search = visited.find(result);
+    if (search != visited.end()) {
+      std::cout << "Chain length " << chain << std::endl;
+      break;
+    }
+
+    number = result;
+    visited.emplace(result);
   }
-
-  Solve(result, ++chain);
 }
 
 }  // namespace
