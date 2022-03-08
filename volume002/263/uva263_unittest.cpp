@@ -32,13 +32,13 @@ namespace {
 std::string SolveByCaptureStdout(uint32_t n) {
   testing::internal::CaptureStdout();
   Solve(n);
-  return "\n" + testing::internal::GetCapturedStdout();
+  return std::string("\n") + testing::internal::GetCapturedStdout();
 }
 
 }  // namespace
 
 TEST(UVa263Test, Solve) {
-  EXPECT_STREQ(SolveByCaptureStdout(123456789).c_str(), R"(
+  EXPECT_EQ(SolveByCaptureStdout(123456789), R"(
 Original number was 123456789
 987654321 - 123456789 = 864197532
 987654321 - 123456789 = 864197532
@@ -46,7 +46,7 @@ Chain length 2
 
 )");
 
-  EXPECT_STREQ(SolveByCaptureStdout(1234).c_str(), R"(
+  EXPECT_EQ(SolveByCaptureStdout(1234), R"(
 Original number was 1234
 4321 - 1234 = 3087
 8730 - 378 = 8352
@@ -56,7 +56,7 @@ Chain length 4
 
 )");
 
-  EXPECT_STREQ(SolveByCaptureStdout(444).c_str(), R"(
+  EXPECT_EQ(SolveByCaptureStdout(444), R"(
 Original number was 444
 444 - 444 = 0
 0 - 0 = 0
@@ -64,7 +64,7 @@ Chain length 2
 
 )");
 
-  EXPECT_STREQ(SolveByCaptureStdout(87543).c_str(), R"(
+  EXPECT_EQ(SolveByCaptureStdout(87543), R"(
 Original number was 87543
 87543 - 34578 = 52965
 96552 - 25569 = 70983
@@ -80,7 +80,7 @@ Chain length 10
 
 )");
 
-  EXPECT_STREQ(SolveByCaptureStdout(1762893).c_str(), R"(
+  EXPECT_EQ(SolveByCaptureStdout(1762893), R"(
 Original number was 1762893
 9876321 - 1236789 = 8639532
 9865332 - 2335689 = 7529643
