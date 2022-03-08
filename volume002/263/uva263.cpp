@@ -34,14 +34,10 @@ uint32_t Descending(std::vector<int> arr) {
 std::vector<int> ToIntVector(uint32_t n) {
   std::vector<int> numbers;
   while (n > 0) {
-    numbers.push_back(n % 10);
+    numbers.emplace(numbers.begin(), n % 10);
     n /= 10;
   }
 
-  // NOTE:
-  // It's safe to remove following line if you just want to make
-  // this solution run more quickly
-  std::reverse(numbers.begin(), numbers.end());
   return numbers;
 }
 
