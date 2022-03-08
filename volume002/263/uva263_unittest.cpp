@@ -2,10 +2,9 @@
 
 #include "uva263.cpp"
 
-TEST(UVa263Test, IntVectorToInt32) {
-  EXPECT_EQ(4444, IntVectorToInt32(std::vector<int>{4, 4, 4, 4}));
-  EXPECT_EQ(123456789,
-            IntVectorToInt32(std::vector<int>{1, 2, 3, 4, 5, 6, 7, 8, 9}));
+TEST(UVa263Test, ToUInt32) {
+  EXPECT_EQ(4444, ToUInt32(std::vector<int>{4, 4, 4, 4}));
+  EXPECT_EQ(123456789, ToUInt32(std::vector<int>{1, 2, 3, 4, 5, 6, 7, 8, 9}));
 }
 
 TEST(UVa263Test, Ascending) {
@@ -22,6 +21,12 @@ TEST(UVa263Test, Descending) {
   EXPECT_EQ(654, Descending(std::vector<int>{6, 5, 4}));
 }
 
+TEST(UVa263Test, ToIntVector) {
+  EXPECT_EQ(ToIntVector(4444), (std::vector<int>{4, 4, 4, 4}));
+  EXPECT_EQ(ToIntVector(123456789),
+            (std::vector<int>{1, 2, 3, 4, 5, 6, 7, 8, 9}));
+}
+
 namespace {
 
 std::string SolveByCaptureStdout(uint32_t n) {
@@ -32,7 +37,7 @@ std::string SolveByCaptureStdout(uint32_t n) {
 
 }  // namespace
 
-TEST(UVa263Test, Solver) {
+TEST(UVa263Test, Solve) {
   EXPECT_STREQ(SolveByCaptureStdout(123456789).c_str(), R"(
 Original number was 123456789
 987654321 - 123456789 = 864197532

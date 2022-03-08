@@ -7,7 +7,7 @@
 
 namespace {
 
-uint32_t IntVectorToInt32(std::vector<int> arr) {
+uint32_t ToUInt32(std::vector<int> arr) {
   std::reverse(arr.begin(), arr.end());
 
   uint32_t total = 0;
@@ -22,22 +22,23 @@ uint32_t IntVectorToInt32(std::vector<int> arr) {
 uint32_t Ascending(std::vector<int> arr) {
   std::sort(arr.begin(), arr.end(),
             [](int m, int n) -> bool { return (m < n); });
-  return IntVectorToInt32(arr);
+  return ToUInt32(arr);
 }
 
 uint32_t Descending(std::vector<int> arr) {
   std::sort(arr.begin(), arr.end(),
             [](int m, int n) -> bool { return (m > n); });
-  return IntVectorToInt32(arr);
+  return ToUInt32(arr);
 }
 
-std::vector<int> NumberToIntVector(uint32_t n) {
+std::vector<int> ToIntVector(uint32_t n) {
   std::vector<int> numbers;
   while (n > 0) {
     numbers.push_back(n % 10);
     n /= 10;
   }
 
+  std::reverse(numbers.begin(), numbers.end());
   return numbers;
 }
 
@@ -47,7 +48,7 @@ void Solve(uint32_t number) {
   std::set<uint32_t> visited;
   for (int chain = 1;; ++chain) {
     // convert number to vector
-    std::vector<int> numbers = NumberToIntVector(number);
+    std::vector<int> numbers = ToIntVector(number);
 
     // calculate ascending/descending number
     auto dsc = Descending(numbers);
