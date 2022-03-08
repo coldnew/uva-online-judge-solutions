@@ -27,8 +27,8 @@ uint32_t CycleLength(uint32_t n) {
 
 void Solve(uint32_t first, uint32_t second) {
   // make sure start is less then end
-  int start = std::min(first, second);
-  int end = std::max(first, second);
+  auto start = std::min(first, second);
+  auto end = std::max(first, second);
 
   uint32_t result = 0;
   for (uint32_t i = start; i <= end; i++) {
