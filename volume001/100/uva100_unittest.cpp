@@ -12,7 +12,7 @@ std::string SolveByCaptureStdout(uint32_t start, uint32_t end) {
 
 }  // namespace
 
-TEST(UVa100Test, Solver) {
+TEST(UVa100Test, Solve) {
   EXPECT_STREQ(SolveByCaptureStdout(1, 10).c_str(), "1 10 20\n");
   EXPECT_STREQ(SolveByCaptureStdout(100, 200).c_str(), "100 200 125\n");
   EXPECT_STREQ(SolveByCaptureStdout(201, 210).c_str(), "201 210 89\n");
