@@ -56,7 +56,7 @@ void Solve(uint32_t number) {
     auto result = dsc - asc;
     std::cout << dsc << " - " << asc << " = " << result << std::endl;
 
-    // make sure the result didn't in our visited set.
+    // if result in our visited set, return chain length.
     auto search = visited.find(result);
     if (search != visited.end()) {
       std::cout << "Chain length " << chain << std::endl << std::endl;
