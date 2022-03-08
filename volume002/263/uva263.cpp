@@ -38,6 +38,9 @@ std::vector<int> ToIntVector(uint32_t n) {
     n /= 10;
   }
 
+  // NOTE:
+  // It's safe to remove following line if you just want to make
+  // this solution run more quickly
   std::reverse(numbers.begin(), numbers.end());
   return numbers;
 }
