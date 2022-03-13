@@ -27,6 +27,7 @@ PDIR=$(dirname "${SDIR}")
 TDIR=(
     "${PDIR}/volume001"
     "${PDIR}/volume002"
+    "${PDIR}/ContestVolumes"
 )
 
 # Variable that will hold the name of the clang-format command
