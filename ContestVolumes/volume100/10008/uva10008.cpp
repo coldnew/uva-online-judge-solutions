@@ -19,7 +19,9 @@ void Solution(std::istream& cin) {
     }
   }
 
-  // since std::map can't be sorted directly, copy data to vector
+  // since our sorting algorighm not olny sorted by key but also by
+  // value, which is not supported in std::map, we need to copy the
+  // data to std::vector and sort on our own
   std::vector<std::pair<char, int>> occurrences;
   std::copy(chars_map.begin(), chars_map.end(),
             std::back_inserter<std::vector<std::pair<char, int>>>(occurrences));
