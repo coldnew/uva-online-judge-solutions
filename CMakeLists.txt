@@ -41,6 +41,7 @@ INCLUDE(options.cmake)
 #-------------------------------------------------------------------------------
 ADD_SUBDIRECTORY(volume001)
 ADD_SUBDIRECTORY(volume002)
+ADD_SUBDIRECTORY(volume005)
 ADD_SUBDIRECTORY(ContestVolumes)
 
 #-------------------------------------------------------------------------------

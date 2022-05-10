@@ -27,6 +27,7 @@ PDIR=$(dirname "${SDIR}")
 TDIR=(
     "${PDIR}/volume001"
     "${PDIR}/volume002"
+    "${PDIR}/volume005"
     "${PDIR}/ContestVolumes"
 )
 
