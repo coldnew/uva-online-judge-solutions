@@ -5,7 +5,6 @@
 void Solution(std::istream& cin) {
   int n;
   while (cin >> n && n) {
-
     bool exit = false;
     while (!exit) {
       std::vector<int> out(n + 1);
