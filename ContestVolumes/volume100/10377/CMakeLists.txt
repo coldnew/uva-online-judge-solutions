@@ -1,0 +1,7 @@
+ADD_EXECUTABLE(uva10377
+  uva10377.cpp)
+
+ADD_EXECUTABLE(uva10377_unittest
+  uva10377_unittest.cpp)
+TARGET_LINK_LIBRARIES(uva10377_unittest PUBLIC ${GTEST_LIBRARIES})
+ADD_TEST(NAME uva10377_unittest COMMAND uva10377_unittest)
